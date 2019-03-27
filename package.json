@@ -16,7 +16,7 @@
     "buffer": "4.5.1"
   },
   "devDependencies": {
-    "connect-protobuf-messages": "spotware/connect-protobuf-messages",
+    "connect-protobuf-messages": "jeremyjs/connect-protobuf-messages#jeremyjs.update-input-format",
     "istanbul": "0.4.2",
     "jasmine": "2.4.1"
   }

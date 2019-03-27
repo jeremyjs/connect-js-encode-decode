@@ -13,10 +13,8 @@ describe('EncodeDecode', function () {
 
     beforeAll(function () {
         protoMessages = new ProtoMessages([
-            {
-                file: 'node_modules/connect-protobuf-messages/src/main/protobuf/CommonMessages.proto',
-                protoPayloadType: 'ProtoPayloadType'
-            }
+            { file: 'CommonMessages.proto' },
+            { file: 'OpenApiMessages.proto' },
         ]);
         protoMessages.load();
         protoMessages.build();
@@ -28,7 +26,7 @@ describe('EncodeDecode', function () {
     });
 
     beforeEach(function () {
-        buffer = fs.readFileSync('./test/data/ProtoPingRes');
+        buffer = fs.readFileSync('./test/data/ProtoOAVersionRes');
         encodeDecode = new EncodeDecode();
     });
 
