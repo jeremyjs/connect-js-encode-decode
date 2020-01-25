@@ -16,7 +16,7 @@
     "buffer": "4.5.1"
   },
   "devDependencies": {
-    "connect-protobuf-messages": "jeremyjs/connect-protobuf-messages#jeremyjs.update-input-format",
+    "open-api-protocol": "jeremyjs/open-api-protocol#v3.0.0",
     "istanbul": "0.4.2",
     "jasmine": "2.4.1"
   }

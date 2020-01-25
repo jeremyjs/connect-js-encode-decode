@@ -1,26 +1,24 @@
 'use strict';
 
 var fs = require('fs');
-var ProtoMessages = require('connect-protobuf-messages');
+var OpenApiProtocol = require('open-api-protocol');
 var EncodeDecode = require('../index');
 var Buffer = require('buffer').Buffer;
+
+console.log(OpenApiProtocol)
 
 describe('EncodeDecode', function () {
     var buffer;
     var encodeDecode;
-    var protoMessages;
     var checkBuffer;
 
     beforeAll(function () {
-        protoMessages = new ProtoMessages([
-            { file: 'CommonMessages.proto' },
-            { file: 'OpenApiMessages.proto' },
-        ]);
-        protoMessages.load();
-        protoMessages.build();
+        const protocol = new OpenApiProtocol();
+        protocol.load();
+        protocol.build();
 
         checkBuffer = function (buffer) {
-            var msg = protoMessages.decode(buffer);
+            var msg = protocol.decode(buffer);
             expect(msg.clientMsgId).toBeDefined();
         };
     });
